@@ -9,8 +9,7 @@ public class Camcorder extends Item{
 
 	public int getOpticalZoom() {
 		
-		error
-		
+			
 		return opticalZoom;
 	}
 	
