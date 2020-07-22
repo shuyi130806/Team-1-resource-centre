@@ -107,7 +107,7 @@ public class ResourceCentreTest {
 		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 
 		// Given an empty list, after adding 2 items, test if the size of the list is 2
-		ResourceCentre.addChromebook(chromebookList, cb1);
+		ResourceCentre.addChromebook(chromebookList, cb1 );
 		ResourceCentre.addChromebook(chromebookList, cb2);
 		assertEquals("Test if that Chromebook arraylist size is 2?", 2, chromebookList.size());
 
