@@ -163,7 +163,7 @@ public class ResourceCentre {
 			output += String.format("%-10s %-30s %-10s %-10s", chromebookList.get(i).getAssetTag(),
 				chromebookList.get(i).getDescription(),
 				ResourceCentre.showAvailability(chromebookList.get(i).getIsAvailable()),
-				chromebookList.get(i).getDueDate());	
+				chromebookList.get(i).getDueDate(),chromebookList.get(i).getOs());	
 		}
 		return output;
 	}
@@ -195,7 +195,7 @@ public class ResourceCentre {
 		Chromebook cb =null;
 		// write your code here
 		
-		String tag = Helper.readString("Enter tag > ");
+		String tag = Helper.readString("Enter Asset tag > ");
 		String os = Helper.readString("Enter OS > ");
 		String description = Helper.readString("Enter description > ");
 		cb = new Chromebook (tag, os, description);

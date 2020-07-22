@@ -61,7 +61,7 @@ public class ResourceCentreTest {
 		assertEquals("Test if that Chromebook arraylist size is 1?", 1, chromebookList.size());
 		
 		//The item just added is as same as the first item of the list
-		assertSame("Test that Chromebook is added same as 1st item of the list?", cc1, chromebookList.get(0));
+		assertSame("Test that Chromebook is added same as 1st item of the list?", cb1, chromebookList.get(0));
 		
 		//Add another item. test The size of the list is 2?
 		ResourceCentre.addChromebook(chromebookList, cb2);
@@ -113,8 +113,8 @@ public class ResourceCentreTest {
 		//test if the expected output string same as the list of chromebook retrieved from the SourceCentre
 		allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
 
-		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CC0011", "Nikon HDSLR", "Yes", "", 40);
-		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CC0012", "Sony DSC-RX100M7", "Yes", "", 20);
+		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0011", "Nikon HDSLR", "Yes", "", 40);
+		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0012", "Sony DSC-RX100M7", "Yes", "", 20);
 	
 		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 		
@@ -124,6 +124,7 @@ public class ResourceCentreTest {
 	public void doLoanCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		
 		
 	}
 	
@@ -143,6 +144,7 @@ public class ResourceCentreTest {
 	public void doReturnChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		
 	}
 	
 	@After
