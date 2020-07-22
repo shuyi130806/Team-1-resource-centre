@@ -158,21 +158,12 @@ public class ResourceCentre {
 	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
 		String output = "";
 		// write your code here
-<<<<<<< HEAD
 		
 		for (int i=0; i<chromebookList.size(); i++) {
 			output += String.format("%-10s %-30s %-10s %-10s %-20\n", chromebookList.get(i).getAssetTag(),
 				chromebookList.get(i).getDescription(),
 				ResourceCentre.showAvailability(chromebookList.get(i).getIsAvailable()),
 				chromebookList.get(i).getDueDate(),chromebookList.get(i).getOs());	
-=======
-		for (int i = 0; i < chromebookList.size(); i++) {
-
-			output += String.format("%-10s %-30s %-10s %-10s %-20d\n", chromebookList.get(i).getAssetTag(),
-					chromebookList.get(i).getDescription(), 
-					ResourceCentre.showAvailability(chromebookList.get(i).getIsAvailable()),
-					chromebookList.get(i).getDueDate(),chromebookList.get(i));
->>>>>>> branch 'master' of https://github.com/shuyi130806/Team-1-resource-centre.git
 		}
 		return output;
 	}
@@ -309,10 +300,31 @@ public class ResourceCentre {
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag){
 		boolean isReturned = false;
 		// write your code here
+		for (int i = 0; i < chromebookList.size(); i++) {
+			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
+					&& chromebookList.get(i).getIsAvailable() == false) {
+				chromebookList.get(i).setIsAvailable(true);
+				chromebookList.get(i).setDueDate("");
+				isReturned = true;
+				
+			}
+		}
 		return isReturned;
 	}
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
+		ResourceCentre.viewAllChromebook(chromebookList);
+		String tag = Helper.readString("Enter asset tag > ");
+		Boolean isReturned = doReturnChromebook(chromebookList, tag);
+		
+		if (isReturned == false) {
+			System.out.println("Invalid asset tag");
+		} else {
+			System.out.println("Chromebook " + tag + " returned");
+		}
+		
+
+
 	}
 
 
